@@ -1,0 +1,354 @@
+/********** Template CSS **********/
+:root {
+  --primary: #00b87b;
+  --secondary: #314355;
+  --light: #f2f2f2;
+  --dark: #2c3e50;
+}
+
+/* Loader */
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2d2d2d;
+}
+
+.ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: ring 2s linear infinite;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 1px 5px 2px #9750b2;
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 1px 5px 2px #597bea;
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 1px 5px 2px #a04aaa;
+  }
+}
+
+.ring:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.loader span {
+  color: #00b87b;
+  font-size: 24px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 200px;
+  font-family: var(--primary-font);
+  animation: text 3s ease-in-out infinite;
+}
+
+@keyframes text {
+  50% {
+    color: #fff;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .sticky-lg-top.vh-100 {
+    height: 100% !important;
+  }
+}
+
+body {
+  min-width: 280px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fw-semi-bold {
+  font-weight: 600;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.btn-square {
+  width: 40px;
+  height: 40px;
+}
+
+.btn-sm-square {
+  width: 30px;
+  height: 30px;
+}
+
+.btn-lg-square {
+  width: 50px;
+  height: 50px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.btn-primary {
+  color: #ffffff;
+}
+
+.typed-cursor {
+  font-size: 25px;
+  color: var(--light);
+}
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 1;
+  font-size: 30px;
+  right: 30px;
+  bottom: 30px;
+  transition: background 0.5s;
+  z-index: 11;
+}
+
+.back-to-top i {
+  color: var(--primary);
+}
+
+.back-to-top i:hover {
+  color: var(--dark);
+}
+
+.back-to-top {
+  -webkit-animation: action 1s infinite alternate;
+  animation: action 1s infinite alternate;
+}
+
+@-webkit-keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+.title {
+  position: relative;
+}
+
+.title::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  bottom: -4px;
+  left: 0;
+  border: 2px solid var(--light);
+  border-radius: 10px;
+}
+
+.title::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 2px;
+  bottom: 0;
+  left: 15px;
+  border-radius: 2px;
+  background: var(--light);
+}
+
+.progress {
+  height: 5px;
+}
+
+.progress .progress-bar {
+  width: 0px;
+  transition: 2s;
+}
+
+.service-item {
+  padding: 30px;
+  text-align: center;
+  background: var(--secondary);
+}
+
+.service-item i {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light);
+  color: var(--primary);
+  transition: 0.5s;
+}
+
+.service-item:hover i {
+  background: var(--primary);
+  color: var(--light);
+}
+
+.portfolio-item .portfolio-btn {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 24px;
+  font-size: 16px;
+  background: rgba(44, 62, 80, 0.9);
+  opacity: 0;
+  transition: 0.5s;
+  padding: 10px;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-item:hover .portfolio-btn {
+  opacity: 1;
+  top: 25px;
+}
+
+.portfolio-item i {
+  opacity: 0;
+  transition: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.portfolio-item:hover i {
+  opacity: 1;
+}
+
+.text-light span {
+  color: #00b87b;
+  font-weight: 600;
+}
+
+.testimonial-carousel .owl-dots {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.testimonial-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  background: var(--light);
+}
+
+.testimonial-carousel .owl-dot.active {
+  background: var(--primary);
+}
+
+textarea {
+  resize: none;
+}
+
+.abt-me {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.abt-sp {
+  width: 100px;
+}
+
+.expr {
+  font-weight: 300;
+}
+
+.success-sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.success h1 {
+  font-size: 100px;
+}
+
+.success p {
+  font-size: 20px;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-container {
+  row-gap: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .testimonial-carousel p {
+    font-size: 18px !important;
+  }
+
+  .container {
+    overflow: hidden;
+  }
+
+  .success h1 {
+    font-size: 50px;
+  }
+
+  .success p {
+    font-size: 18px;
+  }
+
+  .portfolio-item .portfolio-btn {
+    font-size: 15px;
+  }
+}
